@@ -256,7 +256,7 @@ namespace kalProject.Utils
                 if (hasLower && !hasUpper) return CaseType.LowerCase;
 
                 // Heuristic: Title if most words start with upper
-                var tokens = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                var tokens = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 var titleish = tokens.Count(t => char.IsLetter(t[0]) && char.IsUpper(t[0])) >= Math.Max(1, tokens.Length / 2);
                 return titleish ? CaseType.TitleCase : CaseType.SentenceCase;
             }
@@ -278,7 +278,7 @@ namespace kalProject.Utils
                 // If string has spaces and contains at least one acronym-like token, prefer TitleCase over SentenceCase.
                 if (detected is CaseType.SentenceCase or CaseType.LowerCase or CaseType.UpperCase || detected == CaseType.TitleCase)
                 {
-                    var tokens = input!.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    var tokens = input!.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     if (tokens.Any(IsAcronym))
                     {
                         return CaseType.TitleCase;

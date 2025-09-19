@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Multi-targeting: .NET 8 (LTS), .NET Standard 2.0 (broad compat), and .NET Framework 4.7.2/4.8 (widely used) -->
-    <TargetFrameworks>net8.0;netstandard2.0;net472;net48</TargetFrameworks>
+    <!-- Multi-targeting: .NET 8 (LTS), .NET Standard 2.0 (broad compat), and .NET Framework 4.8 (widely used) -->
+  <TargetFrameworks>net8.0;netstandard2.0;net472;net48</TargetFrameworks>
     <RootNamespace>kalProject.Utils</RootNamespace>
     <!-- Use modern C# with nullable reference types across all targets -->
     <LangVersion>latest</LangVersion>
@@ -16,13 +16,11 @@
     <RepositoryUrl>https://github.com/kalProject/kalProject.Utils.StringCase</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/kalProject/kalProject.Utils.StringCase</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+
   </PropertyGroup>
 
-  <!-- Ensure builds succeed for .NET Framework targets without requiring global targeting packs -->
+  <!-- Ensure builds succeed for net48 without requiring global targeting packs -->
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
