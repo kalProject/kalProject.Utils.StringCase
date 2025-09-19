@@ -1,0 +1,42 @@
+# Normalize line endings and improve diffs/merges for .NET projects
+
+# Auto-detect text files and normalize to LF in repo
+* text=auto eol=lf
+
+# Treat common code files as text
+*.cs     text diff=csharp
+*.csx    text
+*.vb     text
+*.fs     text
+*.fsx    text
+*.ts     text
+*.tsx    text
+*.js     text
+*.json   text
+*.xml    text
+*.xaml   text
+*.props  text
+*.targets text
+*.csproj text
+*.vbproj text
+*.fsproj text
+*.sln    text eol=crlf
+*.md     text
+*.yml    text
+*.yaml   text
+
+# Binary files
+*.pfx binary
+*.p12 binary
+*.snk binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+
+# Avoid merge conflicts in XML project files by preferring union
+*.csproj merge=union
+*.vbproj merge=union
+*.fsproj merge=union

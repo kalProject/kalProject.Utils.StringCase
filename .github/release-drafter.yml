@@ -1,0 +1,33 @@
+name-template: 'v$RESOLVED_VERSION'
+
+tag-template: 'v$RESOLVED_VERSION'
+
+change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
+
+categories:
+  - title: 'Breaking Changes'
+    label: 'breaking-change'
+  - title: 'Features'
+    label: 'feature'
+  - title: 'Bug Fixes'
+    label: 'bug'
+  - title: 'Documentation'
+    label: 'documentation'
+  - title: 'CI/CD'
+    label: 'ci'
+
+version-resolver:
+  major:
+    labels: [ 'major', 'breaking-change' ]
+  minor:
+    labels: [ 'minor', 'feature' ]
+  patch:
+    labels: [ 'patch', 'bug', 'chore', 'documentation', 'ci' ]
+  default: patch
+
+template: |
+  ## Changes
+  $CHANGES
+
+  ## Notes
+  - See the [CHANGELOG](./CHANGELOG.md) for curated release notes.

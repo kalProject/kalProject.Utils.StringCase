@@ -1,5 +1,11 @@
 # kalProject.Utils.StringCase
 
+![CI](https://github.com/kalProject/kalProject.Utils.StringCase/actions/workflows/ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![NuGet](https://img.shields.io/nuget/v/kalProject.Utils.StringCase?label=NuGet)
+![NuGet Downloads](https://img.shields.io/nuget/dt/kalProject.Utils.StringCase?label=Downloads)
+![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-StringCase-blue)
+
 Robust string case conversion helpers for C# with smart tokenization (delimiters, case transitions, digit boundaries), popular case formatters, and acronym-preservation options.
 
 ## Features
@@ -21,7 +27,18 @@ Robust string case conversion helpers for C# with smart tokenization (delimiters
 
 Nullable Reference Types are enabled across all targets.
 
-## Installation (GitHub Packages)
+## Installation
+
+### NuGet.org
+
+```xml
+<ItemGroup>
+  <PackageReference Include="kalProject.Utils.StringCase" Version="x.y.z" />
+  <!-- Or use 'dotnet add package kalProject.Utils.StringCase --version x.y.z' -->
+</ItemGroup>
+```
+
+### GitHub Packages
 
 GitHub Packages requires authentication even for public packages. Add the GitHub Packages feed and your credentials.
 
@@ -118,7 +135,18 @@ dotnet test kalProject.Utils.StringCase.sln -c Release
 
 - CI runs on every push/PR to main and builds/tests the solution.
 - Publishing to GitHub Packages happens on pushing tags starting with `v` (e.g., `v1.2.3`). The tag version becomes the NuGet `PackageVersion`.
+ - If `NUGET_API_KEY` is configured in repo secrets, the release is also published to NuGet.org.
+
+### Versioning
+
+- The project sets a base `<VersionPrefix>` in the library csproj.
+- Release builds published via GitHub Actions use the git tag (without the leading `v`) as the package version.
+- Example: tag `v1.2.3` → package version `1.2.3`.
 
 ## License
 
 MIT
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for release notes.

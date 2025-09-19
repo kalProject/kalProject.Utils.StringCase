@@ -54,3 +54,31 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# ------------------------------
+# Publishing configs & secrets (do not commit)
+# ------------------------------
+# NuGet feeds/configs (may contain credentials)
+**/[Nn]uGet.config
+**/[Nn]uGet.*.config
+
+# Visual Studio/MSBuild publish profiles
+**/Properties/PublishProfiles/*.pubxml
+**/*.pubxml.user
+**/*.publishsettings
+
+# Private keys / certificates (signing, TLS, etc.)
+**/*.pfx
+**/*.p12
+**/*.snk
+**/*.pem
+**/*.key
+
+# Publishing guide (internal docs)
+PUBLISHING.md
+
+# Environment/secret files
+.env
+.env.*
+*.secrets.json
+*secrets*.json

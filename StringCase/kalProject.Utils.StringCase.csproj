@@ -20,7 +20,15 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- Versioning: base version overridden by CI tag (vX.Y.Z) for releases -->
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <!-- Include README in NuGet package -->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="/" Link="README.md" />
+  </ItemGroup>
 
   <!-- Ensure builds succeed for .NET Framework targets without requiring global targeting packs -->
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
