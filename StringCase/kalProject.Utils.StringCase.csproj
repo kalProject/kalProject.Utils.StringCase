@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>kalProject.Utils</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>kalProject Team</Authors>
+    <Company>kalProject</Company>
+    <Product>kalProject.Utils.StringCase</Product>
+    <Description>String case conversion utilities for C# projects.</Description>
+    <PackageTags>string;case;conversion;utilities;kalProject</PackageTags>
+    <RepositoryUrl>https://github.com/kalProject/kalProject.Utils.StringCase</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/kalProject/kalProject.Utils.StringCase</PackageProjectUrl>
+
+
+  </PropertyGroup>
+
+</Project>
